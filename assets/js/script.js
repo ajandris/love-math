@@ -86,6 +86,8 @@ function calculateCorrectAnswer(){
             return [operand1 * operand2, "multiply"];
         case "-":
             return [operand1 - operand2, "subtract"];
+        case "/":
+            return [operand1 / operand2, "division"];
         default:
             alert(`Unknown operator ${operator}`);
             throw `Unknown operator ${operator}. Aborting!`;
@@ -127,7 +129,7 @@ function displayMultiplyQuestion(operand1, operand2){
 }
 
 function displayDivideQuestion(operand1, operand2){
-    document.getElementById('operand1').textContent = Math.max(operand1, operand2);
-    document.getElementById('operand2').textContent = Math.min(operand1, operand2);
+    document.getElementById('operand1').textContent = (Math.floor(Math.random() * 25) + 1) * operand2;
+    document.getElementById('operand2').textContent = operand2;
     document.getElementById('operator').textContent = '/';
 }
